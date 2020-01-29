@@ -23,7 +23,7 @@ You can change root password with the passwd command, then add your own username
 
 # useradd -m -G wheel,users,audio,video,trusted -s /bin/bash yourusername
 
-#passwd yourusername
+# passwd yourusername
 
 Then:
 
