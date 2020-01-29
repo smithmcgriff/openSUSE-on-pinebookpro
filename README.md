@@ -31,7 +31,11 @@ Then:
 
 Lightdm should pop up!
 
-After that, open a terminal and enter:
+After that, log in, open a terminal and enter:
+
+# systemctl daemon-reload
+
+then connect to your network, after that, enter:
 
 # sudo zypper inr
 
