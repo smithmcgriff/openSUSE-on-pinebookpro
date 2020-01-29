@@ -7,15 +7,39 @@ Instructions:
 You must have more than 16G of space to write this image! Preferably 32G or larger
 
 To write image to disk:
-# unxz opensuse-tumbleweed-pinebookpro-xfce.img.xz
 
-# dd bs=4M if=opensuse-tumbleweed-pinebookpro-xfce.img of=/dev/yourdiskname iflag=fullblock,direct oflag=direct status=progress
+# xzcat opensuse-tumbleweed-pinebookpro-xfce.img.xz | dd bs=4M of=/dev/mmcblkX iflag=fullblock oflag=direct status=progress; sync
 
-you will probably need to run " # resize2fs /dev/yourdisknamep6 " to expand the root drive to the end of your disk
+once you've booted up, username is root, password is linux. Then enter:
+
+# cfdisk /dev/mmcblkX
+
+resize your last partition to use the rest of the free space, make sure to select write in cfdisk before you exit.
+then enter:
+
+# resize2fs /dev/mmcblkXp6
+
+You can change root password with the passwd command, then add your own username with:
+
+# useradd -m -G wheel,users,audio,video,trusted -s /bin/bash yourusername
+
+#passwd yourusername
+
+Then:
+
+# systemctl set-default graphical.target && systemctl isolate graphical.target
+
+Lightdm should pop up!
+
+After that, open a terminal and enter:
+
+# sudo zypper inr
+
+The inr command is short for "Install-new-recommends". That will grab the rest of the packages you need to get started.
+
 ----------------------------------------------------------------------------------------------------------------------------
 
 
-The system is going to launch directly into a console. Log in with user=root, password=linux. Then just add a username with a command such as "useradd -m -G wheel,trusted,audio,video,users -s /bin/bash yourusername". After that, just enter "passwd yourusername" to change the password and "passwd root" if you'd like to change the root password as well. Then, you can just enter "systemctl set-default graphical.target && systemctl isolate graphical.target" and lightdm should pop up. This image boots very slowly when flashed to the internal eMMC, I'm not exactly sure why, so just give it a couple of minutes and it will boot. It's a bit faster from sdcard after it's initial first boot. After you're logged in, I'd strongly recommend entering "sudo zypper inr" (short for install-new-recommends) into a terminal. It'll grab the rest of the packages you need, about 600 or so. This is an extremely minimal intallation image.
 
 I'll be creating and adding kernel rpm's up here somewhat frequently. This image contains the latest kernel from the pinebook pro gitlab page. This image is also equipped with apparmor as well.
 
