@@ -4,12 +4,14 @@ This image contains a base install of openSUSE tumbleweed with Xfce. I've tried 
 
 Instructions:
 (If you're familiar with suse, you probably won't need the bulk of these instructions)
+You must have more than 16G of space to write this image! Preferably 32G or larger
 
 To write image to disk:
 # unxz opensuse-tumbleweed-pinebookpro-xfce.img.xz
 
 # dd bs=4M if=opensuse-tumbleweed-pinebookpro-xfce.img of=/dev/yourdiskname iflag=fullblock,direct oflag=direct status=progress
 
+you will probably need to run " # resize2fs /dev/yourdisknamep6 " to expand the root drive to the end of your disk
 ----------------------------------------------------------------------------------------------------------------------------
 
 
