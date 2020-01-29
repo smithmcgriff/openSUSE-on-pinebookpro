@@ -5,6 +5,15 @@ This image contains a base install of openSUSE tumbleweed with Xfce. I've tried 
 Instructions:
 (If you're familiar with suse, you probably won't need the bulk of these instructions)
 
+To write image to disk:
+# unxz opensuse-tumbleweed-pinebookpro-xfce.img.xz
+
+# dd bs=4M if=opensuse-tumbleweed-pinebookpro-xfce.img of=/dev/yourdiskname iflag=fullblock,direct oflag=direct status=progress
+
+(this will take 10-15 minutes)
+----------------------------------------------------------------------------------------------------------------------------
+
+
 The system is going to launch directly into a console. Log in with user=root, password=linux. Then just add a username with a command such as "useradd -m -G wheel,trusted,audio,video,users -s /bin/bash yourusername". After that, just enter "passwd yourusername" to change the password and "passwd root" if you'd like to change the root password as well. Then, you can just enter "systemctl set-default graphical.target && systemctl isolate graphical.target" and lightdm should pop up. This image boots very slowly when flashed to the internal eMMC, I'm not exactly sure why, so just give it a couple of minutes and it will boot. It's a bit faster from sdcard after it's initial first boot. After you're logged in, I'd strongly recommend entering "sudo zypper inr" (short for install-new-recommends) into a terminal. It'll grab the rest of the packages you need, about 600 or so. This is an extremely minimal intallation image.
 
 I'll be creating and adding kernel rpm's up here somewhat frequently. This image contains the latest kernel from the pinebook pro gitlab page. This image is also equipped with apparmor as well.
