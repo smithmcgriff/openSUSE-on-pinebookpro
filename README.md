@@ -12,7 +12,7 @@ You must have more than 16G of space to write this image! Preferably 32G or larg
 
 To write image to disk:
 
-# xzcat opensuse-tumbleweed-pinebookpro-xfce.img.xz | dd bs=4M of=/dev/mmcblkX iflag=fullblock oflag=direct status=progress; sync
+# xzcat opensuse-tumbleweed-pinebookpro-xfce-1.0.img.xz | dd bs=4M of=/dev/mmcblkX iflag=fullblock oflag=direct status=progress; sync
 
 once you've booted up, username is root, password is linux. Then enter:
 
