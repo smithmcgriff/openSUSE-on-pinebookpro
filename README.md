@@ -39,6 +39,8 @@ Then, open a terminal and type:
 
 # sudo systemctl daemon-reload
 
+# sudo hostnamectl set-hostname "yourhostnamehere"
+
 and connect to your wifi network. After that, open YaST Date and Time to update your time settings and you should be all set!
 
 ----------------------------------------------------------------------------------------------------------------------------
