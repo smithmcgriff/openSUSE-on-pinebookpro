@@ -35,6 +35,11 @@ Then:
 
 Lightdm should pop up!
 
+Then, open a terminal and type:
+
+# sudo systemctl daemon-reload
+
+and connect to your wifi network. After that, open YaST Date and Time to update your time settings and you should be all set!
 
 ----------------------------------------------------------------------------------------------------------------------------
 
