@@ -2,6 +2,10 @@
 
 This image contains a base install of openSUSE tumbleweed with Xfce. I've tried both KDE and Xfce, and Xfce is the clear winner here. I'd estimate it runs about 50% faster than KDE. 
 
+grab the image here:
+
+https://sourceforge.net/projects/opensuse-on-pinebookpro/files/Rel_1/
+
 Instructions:
 (If you're familiar with suse, you probably won't need the bulk of these instructions)
 You must have more than 16G of space to write this image! Preferably 32G or larger
@@ -31,15 +35,6 @@ Then:
 
 Lightdm should pop up!
 
-After that, log in, open a terminal and enter:
-
-# systemctl daemon-reload
-
-then connect to your network, after that, enter:
-
-# sudo zypper inr
-
-The inr command is short for "Install-new-recommends". That will grab the rest of the packages you need to get started.
 
 ----------------------------------------------------------------------------------------------------------------------------
 
@@ -51,6 +46,6 @@ I got partitioning scheme from Daniel Thomsons debian installation script, so th
 
 This distro has great promise for pinebook pro. You can grab source rpm's from software.opensuse.org, and build packages that aren't currently being distributed for the aarch64 format, so the sky is the limit. I'd highly recommend installing rpm devel, kernel devel, and C++ devel for this reason. That can be achieved with one command: "sudo zypper in -t pattern devel_rpm_build  devel_C_C++ devel_kernel". That will grab what you need to start building source rpm's.
 
-One caveat with opensuse is it does not ship with media codecs needed for watching/playing videos in web browsers. On the x86_64 platform you can easily grab them from the Packman repo, but they seem to have a small selection of aarch64 and noarch rpm's. I'm going to try to hunt down the needed ones/build from source, but if you're a huge youtube watcher, this probably is not the distro for you at this time.
+One caveat with opensuse is it does not ship with media codecs needed for watching/playing videos in web browsers. On the x86_64 platform you can easily grab them from the Packman repo, but they seem to have a small selection of aarch64 and noarch rpm's. I'm going to try to hunt down the needed ones/build from source, but if you're a huge youtube watcher, this probably is not the distro for you at this time. UPDATE: I was able to solve this issue with a bit of a workaround. Chromium for debian is now running in a systemd-nspawn container, so youtube and other media formats work as expected! All you need to do is open chromium in your applications as you normally would!
 
 Have a lot of fun...
