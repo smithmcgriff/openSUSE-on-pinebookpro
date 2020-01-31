@@ -37,6 +37,8 @@ Lightdm should pop up!
 
 Then, open a terminal and type:
 
+# sudo rcnetwork restart
+
 # sudo systemctl daemon-reload
 
 # sudo hostnamectl set-hostname "yourhostnamehere"
