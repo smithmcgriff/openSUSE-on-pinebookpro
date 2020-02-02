@@ -18,7 +18,7 @@ To write image to sdcard from a linux pc:
 
 Because of the level of compression I used, writing this image to internal disk from pinebookpro via an os running on a sdcard to internal memory requires you 
 
-# unxz opensuse-tumbleweed-pinebookpro-xfce-1.0.img.xz
+# unxz --threads=(max number of threads your pc processor has) -9e opensuse-tumbleweed-pinebookpro-xfce-1.0.img.xz
 
 from a linux pc, then you can copy the disk image to the os running on pinebookpro via sdcard and enter:
 
