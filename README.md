@@ -22,7 +22,7 @@ Because of the level of compression I used, writing this image to internal disk 
 
 from a linux pc, then you can copy the disk image to the os running on pinebookpro via sdcard and enter:
 
-# dd if=opensuse-tumbleweed-pinebookpro-xfce-1.0.img of=/dev/mmcblkX oflag=sync status=progress
+# dd if=opensuse-tumbleweed-pinebookpro-xfce-1.0.img of=/dev/mmcblkX oflag=sync status=progress bs=32M
 
 ---------------------------------------------------------------------------------------------------------------------------
 
@@ -73,6 +73,6 @@ That will grab what you need to start building source rpm's.
 
 One caveat with opensuse is it does not ship with media codecs needed for watching/playing videos in web browsers. On the x86_64 platform you can easily grab them from the Packman repo, but they seem to have a small selection of aarch64 and noarch rpm's. I'm going to try to hunt down the needed ones/build from source, but if you're a huge youtube watcher, this probably is not the distro for you at this time. 
 # UPDATE: 
-I was able to solve this issue with a bit of a workaround. Chromium for debian is now running in a systemd-nspawn container, so youtube and other media formats work as expected! All you need to do is open chromium in your applications as you normally would! The password for chromium is "linux".
+I was able to solve this issue with a bit of a workaround. Chromium for debian is now running in a systemd-nspawn container, so youtube and other media formats work as expected! All you need to do is open chromium in your applications as you normally would! The password for chromium is your root password.
 
 Have a lot of fun...
