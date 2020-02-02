@@ -22,7 +22,7 @@ Because of the level of compression I used, writing this image to internal disk 
 
 from a linux pc, then you can copy the disk image to the os running on pinebookpro via sdcard and enter:
 
-# dd if=opensuse-tumbleweed-pinebookpro-xfce-1.0.img.xz of=/dev/mmcblkX oflag=sync status=progress
+# dd if=opensuse-tumbleweed-pinebookpro-xfce-1.0.img of=/dev/mmcblkX oflag=sync status=progress
 
 ---------------------------------------------------------------------------------------------------------------------------
 
