@@ -10,9 +10,21 @@ Instructions:
 (If you're familiar with suse, you probably won't need the bulk of these instructions)
 You must have more than 16G of space to write this image! Preferably 32G or larger
 
-To write image to disk:
+To write image to sdcard from a linux pc:
 
 # xzcat opensuse-tumbleweed-pinebookpro-xfce-1.0.img.xz | dd bs=4M of=/dev/mmcblkX iflag=fullblock oflag=direct status=progress; sync
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+Because of the level of compression I used, writing this image to internal disk from pinebookpro from os on sdcard to internal memory requires you 
+
+# unxz opensuse-tumbleweed-pinebookpro-xfce-1.0.img.xz
+
+from a linux pc, then you can copy the disk image to the os running on pinebookpro via sdcard and enter:
+
+# dd if=opensuse-tumbleweed-pinebookpro-xfce-1.0.img.xz of=/dev/mmcblkX oflag=sync status=progress
+
+---------------------------------------------------------------------------------------------------------------------------
 
 once you've booted up, username is root, password is linux. Then enter:
 
