@@ -75,6 +75,9 @@ One caveat with opensuse is it does not ship with media codecs needed for watchi
 # UPDATE: 
 I was able to solve this issue with a bit of a workaround. Chromium for debian is now running in a systemd-nspawn container, so youtube and other media formats work as expected! All you need to do is open chromium in your applications as you normally would! The password for chromium is your root password.
 # UPDATE 2:
-Thanks to the Manjaro guys the sleep function now works. I'm adding a script above that I've (shamefully) "borrowed" from them. Again, all credit goes to them. Just copy and paste the script or download it somewhere, run 'chmod +x sleep-fix.sh', and type 'sudo sh sleep-fix.sh'
+Thanks to the Manjaro guys the sleep function now works. I'm adding a script above that I've (shamefully) "borrowed" from them. Again, all credit goes to them. Just copy and paste the script or download it somewhere, run 'chmod +x sleep-fix.sh', and type 'sudo sh sleep-fix.sh'. Also, to get a better lockscreen, I'd recommend running:
+
+# sudo zypper rm xscreensaver
+# sudo zypper in xfce4-screensaver
 
 Have a lot of fun...
